@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+:root {
+  --title-cl: hsl(217, 19%, 35%);
+  --font-cl: hsl(214, 17%, 51%);
+  --share: hsl(212, 23%, 69%);
+  --background: hsl(210, 46%, 95%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  padding: 4.5rem 1.5rem;
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--font-cl);
+  font-size: 0.8375rem;
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 740px) {
+  body {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+main {
+  max-width: 327px;
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+  position: relative;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 740px) {
+  main {
+    max-width: 730px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+  }
+}
+
+.header {
+  overflow: hidden;
+}
+
+@media screen and (min-width: 740px) {
+  .header {
+    grid-row: span 2;
+  }
+}
+
+.header__img {
+  border-start-end-radius: 0.5rem;
+  border-start-start-radius: 0.5rem;
+  width: 100%;
+  height: 12.5rem;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 740px) {
+  .header__img {
+    height: 100%;
+    border-start-end-radius: 0;
+    border-end-start-radius: 0.5rem;
+    object-position: left;
+  }
+}
+
+.about {
+  padding: 2.5rem 2rem 2rem 2rem;
+}
+
+@media screen and (min-width: 740px) {
+  .about {
+    padding: 2.5rem;
+  }
+}
+
+.about__title {
+  font-weight: 700;
+  color: var(--title-cl);
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+@media screen and (min-width: 740px) {
+  .about__title {
+    font-size: 1.25rem;
+  }
+}
+
+.about__text {
+  line-height: 1.5;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  padding: 0 2rem 1.25rem 2rem;
+  column-gap: 1rem;
+  align-items: center;
+}
+
+@media screen and (min-width: 740px) {
+  .footer {
+    padding: 0 2.5rem 2rem 2.5rem;
+  }
+}
+
+.footer__name {
+  color: var(--title-cl);
+  font-weight: 700;
+}
+
+.footer__avatar {
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+  grid-row: span 2;
+}
+
+.footer__btn {
+  grid-row: 1/ 3;
+  grid-column: 3;
+  background-color: var(--background);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__btn.active {
+  background-color: var(--share);
+}
+
+.footer__btn.active path {
+  fill: var(--white);
+}
+
+.share {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: var(--title-cl);
+  color: var(--share);
+  padding: 1rem 2rem 1.5rem 2rem;
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  border-end-end-radius: 0.5rem;
+  border-end-start-radius: 0.5rem;
+}
+
+@media screen and (min-width: 740px) {
+  .share {
+    left: initial;
+    right: -75px;
+    bottom: 6rem;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+  }
+
+  .share::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 0.75rem;
+    width: 1.5rem;
+    background-color: var(--title-cl);
+    bottom: -0.74rem;
+    right: 50%;
+    transform: translateX(50%);
+    clip-path: polygon(50% 100%, 0 0, 100% 0);
+  }
+}
+
+.share.active {
+  display: flex;
+}
+
+.share__btn {
+  background-color: var(--share);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.share__title {
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.5rem;
+}
+
+@media screen and (min-width: 740px) {
+  .share__title {
+    margin-right: 1rem;
+  }
+}
+
+@media screen and (min-width: 740px) {
+  .share__btn {
+    display: none;
+  }
+}
+
+.share__btn path {
+  fill: var(--white);
+}
+
+.share__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share__link {
+  display: inline-block;
+  padding: 0.2rem;
+}
+
+.share__item:nth-of-type(2) {
+  margin: 0 0.5rem;
+}
